@@ -1,0 +1,135 @@
+
+// Account Dashboard Statistics MT4
+// Developer's Site: forexroboteasy.com
+// Development by: Forex Robot Easy Team
+
+// Real-time Profit/Loss Monitoring Function
+double GetAccountProfit()
+{
+   double accountBalance = AccountInfoDouble(ACCOUNT_BALANCE);
+   double accountEquity = AccountInfoDouble(ACCOUNT_EQUITY);
+   double profitLoss = accountEquity - accountBalance;
+   
+   return profitLoss;
+}
+
+// Risk Management Tools Functions
+double CalculateRiskRewardRatio(double stopLoss, double takeProfit)
+{
+   double riskRewardRatio = (takeProfit - stopLoss) / stopLoss;
+   
+   return riskRewardRatio;
+}
+
+double CalculateMaxDrawdown()
+{
+   // Calculate maximum drawdown logic goes here
+   double maxDrawdown = 0;
+   
+   return maxDrawdown;
+}
+
+double CalculateAccountEquity()
+{
+   double accountEquity = AccountInfoDouble(ACCOUNT_EQUITY);
+   
+   return accountEquity;
+}
+
+// Performance Metrics Functions
+double CalculateWinRate()
+{
+   // Calculate win rate logic goes here
+   double winRate = 0;
+   
+   return winRate;
+}
+
+double CalculateAverageTradeDuration()
+{
+   // Calculate average trade duration logic goes here
+   double averageTradeDuration = 0;
+   
+   return averageTradeDuration;
+}
+
+double CalculateAccountGrowth()
+{
+   double accountBalance = AccountInfoDouble(ACCOUNT_BALANCE);
+   double initialBalance = 10000; // Assuming initial balance is $10,000
+   double accountGrowth = ((accountBalance - initialBalance) / initialBalance) * 100;
+   
+   return accountGrowth;
+}
+
+// Historical Data Analysis Functions
+double CalculateProfitDistribution()
+{
+   // Calculate profit distribution logic goes here
+   double profitDistribution = 0;
+   
+   return profitDistribution;
+}
+
+double CalculateTradeFrequency()
+{
+   // Calculate trade frequency logic goes here
+   double tradeFrequency = 0;
+   
+   return tradeFrequency;
+}
+
+double CalculateAverageTradeSize()
+{
+   // Calculate average trade size logic goes here
+   double averageTradeSize = 0;
+   
+   return averageTradeSize;
+}
+
+// Trade History Visualization Functions
+void VisualizeTradeHistory()
+{
+   // Visualize trade history logic goes here
+}
+
+// Alert System Function
+void AlertSystem(double threshold)
+{
+   double accountProfit = GetAccountProfit();
+   
+   if (accountProfit >= threshold)
+   {
+      Alert('Account profit has reached the predefined threshold.');
+   }
+}
+
+// Main function
+void OnStart()
+{
+   // Real-time Profit/Loss Monitoring
+   double accountProfit = GetAccountProfit();
+   Print('Current profit/loss: ', accountProfit);
+   
+   // Risk Management Tools
+   double riskRewardRatio = CalculateRiskRewardRatio(50, 100);
+   double maxDrawdown = CalculateMaxDrawdown();
+   double accountEquity = CalculateAccountEquity();
+   
+   // Performance Metrics
+   double winRate = CalculateWinRate();
+   double averageTradeDuration = CalculateAverageTradeDuration();
+   double accountGrowth = CalculateAccountGrowth();
+   
+   // Historical Data Analysis
+   double profitDistribution = CalculateProfitDistribution();
+   double tradeFrequency = CalculateTradeFrequency();
+   double averageTradeSize = CalculateAverageTradeSize();
+   
+   // Trade History Visualization
+   VisualizeTradeHistory();
+   
+   // Alert System
+   double threshold = 500; // Predefined profit/loss threshold
+   AlertSystem(threshold);
+}
